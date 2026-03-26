@@ -1,6 +1,6 @@
 ﻿namespace Banka_Balon
 {
-    partial class Form1
+    partial class Form_Hlavni
     {
         /// <summary>
         /// Required designer variable.
@@ -75,6 +75,7 @@
             this.button_Add.TabIndex = 1;
             this.button_Add.Text = "Přidat klienta";
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // listbox_klient
             // 
@@ -84,14 +85,14 @@
             this.listbox_klient.Size = new System.Drawing.Size(154, 433);
             this.listbox_klient.TabIndex = 0;
             // 
-            // Form1
+            // Form_Hlavni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 644);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form_Hlavni";
+            this.Text = "Form_Hlavni";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

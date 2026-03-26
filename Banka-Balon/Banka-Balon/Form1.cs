@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Banka_Balon
 {
-    public partial class Form1 : Form
+    public partial class Form_Hlavni : Form
     {
-        public Form1()
+        public Form_Hlavni()
         {
             InitializeComponent();
+        }
+
+        private void button_Add_Click(object sender, EventArgs e)
+        {
+            Form_Klient fk = new Form_Klient();
+            fk.ShowDialog();
         }
     }
 }
