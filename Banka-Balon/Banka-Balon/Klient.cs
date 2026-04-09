@@ -12,22 +12,26 @@ namespace Banka_Balon
         public string Prijmeni { get; set; }
         public string UzivatelskeJmeno { get; set; }
         public string Heslo { get; set; }
-        public string Ucet { get; set; }
 
-        public Klient(string jmeno, string prijmeni, string uzivatelskeJmeno, string heslo, string ucet)
+        public static List<Klient> Ucty = new List<Klient>();
+
+        public Klient(string jmeno, string prijmeni, string uzivatelskejmeno, string heslo)
         {
             Jmeno = jmeno;
             Prijmeni = prijmeni;
-            UzivatelskeJmeno = uzivatelskeJmeno;
+            UzivatelskeJmeno = uzivatelskejmeno;
             Heslo = heslo;
-            Ucet = ucet;
         }
+
+        public static void PridejKlienta(Klient klient)
+        {
+            Ucty.Add(klient);
+        }
+
         public override string ToString()
         {
-            return Jmeno + " " + Prijmeni;
+            return $"{Jmeno} {Prijmeni} ({UzivatelskeJmeno})";
         }
-
-
 
     }
 }

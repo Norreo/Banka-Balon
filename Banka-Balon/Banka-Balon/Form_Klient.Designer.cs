@@ -38,10 +38,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_Heslo = new System.Windows.Forms.TextBox();
+            this.tb_Username = new System.Windows.Forms.TextBox();
+            this.tb_Prijmeni = new System.Windows.Forms.TextBox();
+            this.tb_Jmeno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -124,6 +124,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
@@ -142,33 +143,33 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Seznam účtů klienta";
             // 
-            // textBox4
+            // tb_Heslo
             // 
-            this.textBox4.Location = new System.Drawing.Point(157, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(113, 20);
-            this.textBox4.TabIndex = 25;
+            this.tb_Heslo.Location = new System.Drawing.Point(157, 187);
+            this.tb_Heslo.Name = "tb_Heslo";
+            this.tb_Heslo.Size = new System.Drawing.Size(113, 20);
+            this.tb_Heslo.TabIndex = 25;
             // 
-            // textBox3
+            // tb_Username
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 20);
-            this.textBox3.TabIndex = 24;
+            this.tb_Username.Location = new System.Drawing.Point(154, 124);
+            this.tb_Username.Name = "tb_Username";
+            this.tb_Username.Size = new System.Drawing.Size(113, 20);
+            this.tb_Username.TabIndex = 24;
             // 
-            // textBox2
+            // tb_Prijmeni
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 20);
-            this.textBox2.TabIndex = 23;
+            this.tb_Prijmeni.Location = new System.Drawing.Point(154, 66);
+            this.tb_Prijmeni.Name = "tb_Prijmeni";
+            this.tb_Prijmeni.Size = new System.Drawing.Size(113, 20);
+            this.tb_Prijmeni.TabIndex = 23;
             // 
-            // textBox1
+            // tb_Jmeno
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 20);
-            this.textBox1.TabIndex = 22;
+            this.tb_Jmeno.Location = new System.Drawing.Point(154, 12);
+            this.tb_Jmeno.Name = "tb_Jmeno";
+            this.tb_Jmeno.Size = new System.Drawing.Size(113, 20);
+            this.tb_Jmeno.TabIndex = 22;
             // 
             // label4
             // 
@@ -210,15 +211,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 576);
+            this.ClientSize = new System.Drawing.Size(669, 501);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_Heslo);
+            this.Controls.Add(this.tb_Username);
+            this.Controls.Add(this.tb_Prijmeni);
+            this.Controls.Add(this.tb_Jmeno);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -246,10 +247,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_Heslo;
+        private System.Windows.Forms.TextBox tb_Username;
+        private System.Windows.Forms.TextBox tb_Prijmeni;
+        private System.Windows.Forms.TextBox tb_Jmeno;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

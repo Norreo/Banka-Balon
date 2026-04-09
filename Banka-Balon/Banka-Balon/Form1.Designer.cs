@@ -57,6 +57,7 @@
             this.button_custom.TabIndex = 3;
             this.button_custom.Text = "Upravit klienta";
             this.button_custom.UseVisualStyleBackColor = true;
+            this.button_custom.Click += new System.EventHandler(this.button_custom_Click);
             // 
             // button_Del
             // 
