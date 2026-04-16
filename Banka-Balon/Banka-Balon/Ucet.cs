@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace Banka_Balon
 {
-    internal class Ucet
+    public class Ucet
     {
             public string CisloUctu { get; set; }
             public string Zustatek { get; set; }
+        public Ucet() { }
+
+        public Ucet(string cislo, string zustatek)
+        {
+            CisloUctu = cislo;
+            Zustatek = zustatek;
+        }
+
+        public override string ToString()
+        {
+            return $"Účet: {CisloUctu} | Zůstatek: {Zustatek} Kč";
+        }
 
     }
 }

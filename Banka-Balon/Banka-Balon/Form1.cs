@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Banka_Balon
 {
@@ -15,15 +11,60 @@ namespace Banka_Balon
         public Form_Hlavni()
         {
             InitializeComponent();
+            Klient.DeserializujZXml("database.xml");
+            foreach (var klient in Klient.Ucty)
+            {
+                listbox_klient.Items.Add(klient);
+            }
         }
 
-        private void button_Add_Click(object sender, EventArgs e)
+        private void btn_pridejKlienta_Click_1(object sender, EventArgs e)
         {
             Klient User = null;
-            Form_Klient fk = new Form_Klient(User);
-            fk.ShowDialog();
-            if (fk.DialogResult == DialogResult.OK)
+            Form_Klient f2 = new Form_Klient(User);
+            f2.ShowDialog();
+            if (f2.DialogResult == DialogResult.OK)
             {
+                listbox_klient.Items.Clear();
+                foreach (var klient in Klient.Ucty)
+                {
+                    listbox_klient.Items.Add(klient);
+                    Klient.SerializujDoXml("database.xml");
+                }
+            }
+
+        }
+
+        private void btn_upravitKlienta_Click_1(object sender, EventArgs e)
+        {
+            if (listbox_klient.SelectedItem != null)
+            {
+                Klient User = (Klient)listbox_klient.SelectedItem;
+                Form_Klient f2 = new Form_Klient(User);
+                f2.ShowDialog();
+                if (f2.DialogResult == DialogResult.OK)
+                {
+                    Klient.Ucty.Remove(User);
+                    listbox_klient.Items.Clear();
+                    foreach (var klient in Klient.Ucty)
+                    {
+                        listbox_klient.Items.Add(klient);
+                        Klient.SerializujDoXml("database.xml");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte klienta, kterého chcete upravit.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_odstranKlienta_Click_1(object sender, EventArgs e)
+        {
+            if (listbox_klient.SelectedItem != null)
+            {
+                Klient User = (Klient)listbox_klient.SelectedItem;
+                Klient.Ucty.Remove(User);
                 listbox_klient.Items.Clear();
                 foreach (var klient in Klient.Ucty)
                 {
@@ -31,28 +72,11 @@ namespace Banka_Balon
                 }
             }
         }
-
-        private void button_custom_Click(object sender, EventArgs e)
-        {
-            if (listbox_klient.SelectedItem != null)
-            {
-                Klient User = (Klient)listbox_klient.SelectedItem;
-                Form_Klient fk = new Form_Klient(User);
-                fk.ShowDialog();
-                if (fk.DialogResult == DialogResult.OK)
-                {
-                    Klient.Ucty.Remove(User);
-                    listbox_klient.Items.Clear();
-                    foreach (var klient in Klient.Ucty)
-                    {
-                        listbox_klient.Items.Add(klient);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vyberte klienta, kterého chcete upravit.");
-            }
-        }
     }
 }
+
+
+
+
+
+
