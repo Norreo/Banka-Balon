@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_upravitKlienta = new System.Windows.Forms.Button();
             this.btn_odstranKlienta = new System.Windows.Forms.Button();
             this.btn_pridejKlienta = new System.Windows.Forms.Button();
             this.listbox_klient = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Klient";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 561);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(178, 29);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Účet klienta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_upravitKlienta
             // 
@@ -88,15 +98,6 @@
             this.listbox_klient.Name = "listbox_klient";
             this.listbox_klient.Size = new System.Drawing.Size(154, 433);
             this.listbox_klient.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 561);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Účet klienta";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form_Hlavni
             // 

@@ -18,10 +18,7 @@ namespace Banka_Balon
             Zustatek = zustatek;
         }
 
-        public override string ToString()
-        {
-            return $"Účet: {CisloUctu} | Zůstatek: {Zustatek} Kč";
-        }
+      
 
     }
 }

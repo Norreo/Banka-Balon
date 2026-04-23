@@ -21,7 +21,7 @@ namespace Banka_Balon
         public string Heslo { get; set; }
 
 
-        public static List<Klient> Ucty = new List<Klient>();
+
 
         public Klient() { }
 

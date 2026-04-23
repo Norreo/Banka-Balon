@@ -21,10 +21,12 @@ namespace Banka_Balon
         private void btn_pridejKlienta_Click_1(object sender, EventArgs e)
         {
             Klient User = null;
-            Form_Klient f2 = new Form_Klient(User);
+            string mode = "add";
+            Form_Klient f2 = new Form_Klient(User, mode);
             f2.ShowDialog();
             if (f2.DialogResult == DialogResult.OK)
             {
+                {
                 listbox_klient.Items.Clear();
                 foreach (var klient in Klient.Ucty)
                 {
@@ -33,6 +35,7 @@ namespace Banka_Balon
                 }
             }
 
+            }
         }
 
         private void btn_upravitKlienta_Click_1(object sender, EventArgs e)
@@ -40,7 +43,8 @@ namespace Banka_Balon
             if (listbox_klient.SelectedItem != null)
             {
                 Klient User = (Klient)listbox_klient.SelectedItem;
-                Form_Klient f2 = new Form_Klient(User);
+                string mode = "change";
+                Form_Klient f2 = new Form_Klient(User, mode);
                 f2.ShowDialog();
                 if (f2.DialogResult == DialogResult.OK)
                 {
@@ -71,6 +75,32 @@ namespace Banka_Balon
                     listbox_klient.Items.Add(klient);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listbox_klient.SelectedItem != null)
+            {
+                Klient User = (Klient)listbox_klient.SelectedItem;
+                string mode = "finance";
+                Form_Klient f2 = new Form_Klient(User, mode);
+                f2.ShowDialog();
+                if (f2.DialogResult == DialogResult.OK)
+                {
+                    Klient.Ucty.Remove(User);
+                    listbox_klient.Items.Clear();
+                    foreach (var klient in Klient.Ucty)
+                    {
+                        listbox_klient.Items.Add(klient);
+                        Klient.SerializujDoXml("database.xml");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte klienta, jehož účty chcete zobrazit.");
+            }
+
         }
     }
 }

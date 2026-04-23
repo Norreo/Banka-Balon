@@ -13,7 +13,7 @@ namespace Banka_Balon
     public partial class Form_Klient : Form
     {
         Klient User;
-        public Form_Klient(Klient user)
+        public Form_Klient(Klient user, string mode)
         {
             InitializeComponent();
             User = user;
@@ -65,7 +65,12 @@ namespace Banka_Balon
             }
 
         }
-  }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
 
 
